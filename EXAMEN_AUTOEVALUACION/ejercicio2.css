@@ -1,0 +1,26 @@
+.encabezado {
+    font-weight: bold;
+    text-align: center;
+}
+
+.contenedor {}
+
+.tabla {
+    text-align: center;
+    margin: auto;
+    margin-top: 3em;
+    width: 50%;
+    border-spacing: 0;
+}
+
+tr,
+td {
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+}
+
+.botones {
+    padding: 2em;
+}
