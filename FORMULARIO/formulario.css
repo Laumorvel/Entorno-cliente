@@ -1,0 +1,31 @@
+.oculto {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+* {
+    background-color: rgb(223, 217, 201);
+}
+
+form {
+    background-color: rgb(226, 197, 159);
+    font-size: 16px;
+    margin-left: 30%;
+    margin-right: 25%;
+    margin-top: 10%;
+    padding: 1em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+form p {
+    background-color: rgb(226, 197, 159);
+    margin-left: 2em;
+}
+
+p {
+    font-family: sans-serif;
+}
