@@ -24,7 +24,7 @@ function consigueFecha(){
     const fecha = new Date(anyo, mesFin, 1);
     let auxMes = fecha.getMonth();
 
-    while(mesFin == auxMes){
+    while(fecha.getMonth() == auxMes){
         let numDia = fecha.getDate();
         let nomDia =  fecha.getDay();
         let finNumDia = semana[nomDia];
