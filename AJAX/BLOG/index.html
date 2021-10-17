@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura's blog</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div id="contenedor" class="contenedor">
+        <h1 align="center" class="titulo">CREA TU USUARIO <br> Y ÚNETE A LA COMUNIDAD</h1>
+
+        <form id="addUser">
+            <label for="name">Nombre: </label><input type="text" name="name" id="nombre" required><br>
+            <label for="apell">Apellidos: </label><input type="text" name="apell" id="apell" required><br>
+            <label for="dni">DNI: </label><input type="text" name="dni" id="dni" required><br>
+            <label for="direccion">Dirección: </label><input type="text" name="direccion" id="direccion" required><br>
+            <label for="tlf">Teléfono: </label><input type="text" name="tlf" id="tlf" required><br>
+            <label for="nacimiento">Nacimiento: </label><input type="date" name="nacimiento" id="nacimiento" required><br>
+            <label>Sexo:
+                <input type="radio" name="hm" value="h" id="hombre"> Hombre
+                <input type="radio" name="hm" value="m" id="mujer"> Mujer
+            </label><br>
+
+            <button type="submit" id="submit">Únete</button>
+
+        </form><br>
+        <div class="posts">
+            <button class="posts"><a href="./posts.html" target="_blank" rel="noopener noreferrer">Visita los posts</a></button>
+
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "botella",
+      "descrip": "con agua",
+      "id": 2
+    },
+    {
+      "name": "gj",
+      "descrip": "hj",
+      "id": 3
+    },
+    {
+      "name": "sdf",
+      "descrip": "fghfgh",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

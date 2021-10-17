@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Federo&family=Quicksand:wght@300&display=swap');
+* {
+    font-family: 'Quicksand', sans-serif;
+    background-color: gold;
+}
+
+body {
+    padding: 3em 0;
+}
+
+.titulo {
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-family: 'Cinzel', serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Federo', sans-serif;
+}
+
+form {
+    font-size: 25px;
+    padding: 1em 1em 2em 4em;
+    color: white;
+    text-align: center;
+    margin-top: 3em;
+    column-count: 2;
+    text-align: justify;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(217, 219, 219);
+    border-radius: 10px;
+}
+
+label,
+input {
+    margin-top: 2em;
+    border-radius: 6px;
+}
+
+label {
+    color: black;
+    background-color: rgb(217, 219, 219);
+}
+
+a {
+    text-decoration: none;
+    background-color: rgb(102, 98, 98);
+    font-family: 'Cinzel', serif;
+    font-family: 'Federo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 5px 50px;
+    font-size: 25px;
+}
+
+input {
+    background-color: white;
+    height: 20px;
+}
+
+button {
+    background-color: rgb(102, 98, 98);
+    font-family: 'Cinzel', serif;
+    font-family: 'Federo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 5px 50px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+}
+
+#submit {
+    margin-top: 1em;
+    font-size: 20px;
+}

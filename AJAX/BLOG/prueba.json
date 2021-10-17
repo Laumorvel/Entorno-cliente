@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "text": ""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "nombre": "",
+      "apellidos": "",
+      "dni": "",
+      "direccion": "",
+      "telefono": "",
+      "sexo": ""
+    },
+    {
+      "nombre": "botella",
+      "apellidos": "adsasd",
+      "dni": "30303030m",
+      "direccion": "kjdf",
+      "tlf": "66666",
+      "sexo": "hombre",
+      "id": 2
+    }
+  ]
+}
