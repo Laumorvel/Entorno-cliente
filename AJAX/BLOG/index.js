@@ -37,6 +37,7 @@ apellidos.addEventListener('change', (e) => {
 dni.addEventListener('change', (e) => {
     let expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
     if (expresion_regular_dni.test(e.target.value.trim())) formIsValid.dni = true;
+    if (compruebaDnis(dni.value)) formIsValid.dni = false;
 })
 
 direccion.addEventListener('change', (e) => {
@@ -103,4 +104,29 @@ function enviarPeticion() {
         // procesamos los datos
 
     })
+}
+
+//Compruebo que no es un dni que ya se encuentre en la bbdd
+
+function compruebaDnis(dniUser) {
+    const peticion = new XMLHttpRequest();
+    peticion.open('GET', 'http://localhost:3000/users'); //no podemos traernos los dnis
+    peticion.send();
+    let resul = false;
+    peticion.addEventListener('load', function() { //es necesario para que funcione el GET
+        //si se utiliza readystatechange --> hay que comprobar que la penticion esta bien ==200
+        //con load, esto ya se presupone que ha salido bien
+
+
+        let users = JSON.parse(peticion.responseText);
+        console.log(users);
+
+        users.forEach(user => {
+            if (user.dni == dniUser) resul = true;
+            alert('El dni ya se ha introducido');
+        });
+
+    })
+    return resul;
+
 }

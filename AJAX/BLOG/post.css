@@ -25,6 +25,8 @@ table {
     border: rgb(102, 98, 98) 1px solid;
     table-layout: fixed;
     width: 90%;
+    margin: 0 auto;
+    margin-top: 2em;
 }
 
 tr.main th {
@@ -41,17 +43,25 @@ th {
 td {
     padding-left: 1em;
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
-tr:hover:not(:first-of-type) {
-    /*Señala todos los tr menos el primero*/
-    background-color: rgb(245, 240, 195);
+#title {
+    font-weight: bold;
 }
 
-.contenido {
-    display: flex;
-    justify-content: center;
-    padding: 2em 2em;
+input {
+    background-color: rgb(102, 98, 98);
+    font-family: 'Cinzel', serif;
+    font-family: 'Federo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 5px 50px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
 }
 
 .borrar {
@@ -68,16 +78,15 @@ tr:hover:not(:first-of-type) {
     text-align: center;
 }
 
-.ver {
-    background-color: rgb(102, 98, 98);
-    font-family: 'Cinzel', serif;
-    font-family: 'Federo', sans-serif;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-    padding: 5px 50px;
-    text-decoration: none;
-    margin: 2px 1px;
-    cursor: pointer;
-    border: none;
-    text-align: center;
+.oculto {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.tabla2 tr:first-child td:first-child {
+    font-weight: bold;
+    margin-right: 10px;
 }

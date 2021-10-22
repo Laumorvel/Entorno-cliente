@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Federo&family=Quicksand:wght@300&display=swap');
 * {
     font-family: 'Quicksand', sans-serif;
-    background-color: gold;
+    background-color: rgb(194, 217, 223);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 form {
     font-size: 25px;
     padding: 1em 1em 2em 4em;
-    color: white;
+    color: rgb(206, 222, 224);
     text-align: center;
     margin-top: 3em;
     column-count: 2;

@@ -2,16 +2,59 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "text": ""
+      "title": "Cosas",
+      "author": "laura",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "id": 2,
+      "title": "Más cosas",
+      "author": "jaime",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "id": 3,
+      "title": "Aun más cosas",
+      "author": "lidia",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "autor": "",
+      "id": "",
+      "texto": "",
+      "idPost": ""
+    },
+    {
+      "autor": "laura",
+      "texto": "Escriba el nuevo comentario",
+      "idPost": "1",
+      "id": "6RsBCoj"
+    },
+    {
+      "autor": "lidia",
+      "texto": "Eosjvfsdv",
+      "idPost": "1",
+      "id": "XDtlW5C"
+    },
+    {
+      "autor": "laura",
+      "texto": "Escriba el nuevo comentario",
+      "idPost": "1",
+      "id": "KCoYJ-4"
+    },
+    {
+      "autor": "laura",
+      "texto": "Ha costado la vida misma",
+      "idPost": "1",
+      "id": "-FqeOAL"
+    },
+    {
+      "autor": "pepe",
+      "texto": "No veeeeeas lo que ha costao",
+      "idPost": "2",
+      "id": "hJgZF54"
     }
   ],
   "profile": {
@@ -19,22 +62,40 @@
   },
   "users": [
     {
-      "id": 1,
-      "nombre": "",
-      "apellidos": "",
-      "dni": "",
-      "direccion": "",
-      "telefono": "",
-      "sexo": ""
+      "nombre": "laura",
+      "apellidos": "moreno",
+      "dni": "85214587l",
+      "direccion": "calle callejón, 89",
+      "telefono": "652145874",
+      "sexo": "mujer",
+      "id": 1
     },
     {
-      "nombre": "botella",
-      "apellidos": "adsasd",
+      "nombre": "pepe",
+      "apellidos": "garcía",
       "dni": "30303030m",
-      "direccion": "kjdf",
-      "tlf": "66666",
+      "direccion": "calle de antequera, 1",
+      "tlf": "666665214",
       "sexo": "hombre",
       "id": 2
+    },
+    {
+      "nombre": "jaime",
+      "apellidos": "tomares tomates",
+      "dni": "52125487m",
+      "direccion": "calle casas, 67",
+      "tlf": "685214587",
+      "sexo": "hombre",
+      "id": 3
+    },
+    {
+      "nombre": "lidia",
+      "apellidos": "asd asd",
+      "dni": "52125487m",
+      "direccion": "calle loro, 78",
+      "tlf": "85412587",
+      "sexo": "mujer",
+      "id": 4
     }
   ]
 }
