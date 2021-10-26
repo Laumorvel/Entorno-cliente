@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Federo&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.titulo {
+    font-size: 80px;
+    color: gold;
+    font-family: 'Cinzel', serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Federo', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border: rgb(102, 98, 98) 1px solid;
+    table-layout: fixed;
+    width: 90%;
+}
+
+tr.main th {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+tr,
+th {
+    text-align: left;
+    padding: 15px;
+}
+
+td {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+tr:hover:not(:first-of-type) {
+    /*Señala todos los tr menos el primero*/
+    background-color: rgb(245, 240, 195);
+}
+
+.contenido {
+    display: flex;
+    justify-content: center;
+    padding: 2em 2em;
+}
+
+.borrar {
+    background-color: rgb(189, 116, 116);
+    font-family: 'Cinzel', serif;
+    font-family: 'Federo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 5px 35px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.ver {
+    background-color: rgb(102, 98, 98);
+    font-family: 'Cinzel', serif;
+    font-family: 'Federo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 5px 50px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}

@@ -1,0 +1,131 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "más cosas",
+      "author": "laura",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "id": 4,
+      "title": "Muchas cosas",
+      "author": "lidia",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "id": 5,
+      "title": "más cosas",
+      "author": "laura",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "id": 6,
+      "title": "Muchas cosas",
+      "author": "lidia",
+      "text": "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    }
+  ],
+  "comments": [
+    {
+      "autor": "",
+      "id": "",
+      "texto": "",
+      "idPost": ""
+    },
+    {
+      "autor": "laura",
+      "texto": "Escriba el nuevo comentario",
+      "idPost": "1",
+      "id": "6RsBCoj"
+    },
+    {
+      "autor": "lidia",
+      "texto": "Eosjvfsdv",
+      "idPost": "1",
+      "id": "XDtlW5C"
+    },
+    {
+      "autor": "laura",
+      "texto": "Escriba el nuevo comentario",
+      "idPost": "1",
+      "id": "KCoYJ-4"
+    },
+    {
+      "autor": "laura",
+      "texto": "Ha costado la vida misma",
+      "idPost": "1",
+      "id": "-FqeOAL"
+    },
+    {
+      "autor": "pepe",
+      "texto": "No veeeeeas lo que ha costao",
+      "idPost": "2",
+      "id": "hJgZF54"
+    },
+    {
+      "autor": "laura",
+      "texto": "Escriba el nuevo comentario",
+      "idPost": "4",
+      "id": "gLUpTxp"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "nombre": "laura",
+      "apellidos": "moreno",
+      "dni": "85214587l",
+      "direccion": "calle callejón, 89",
+      "telefono": "652145874",
+      "sexo": "mujer",
+      "id": 1
+    },
+    {
+      "nombre": "pepe",
+      "apellidos": "garcía",
+      "dni": "30303030m",
+      "direccion": "calle de antequera, 1",
+      "tlf": "666665214",
+      "sexo": "hombre",
+      "id": 2
+    },
+    {
+      "nombre": "jaime",
+      "apellidos": "tomares tomates",
+      "dni": "52125487m",
+      "direccion": "calle casas, 67",
+      "tlf": "685214587",
+      "sexo": "hombre",
+      "id": 3
+    },
+    {
+      "nombre": "lidia",
+      "apellidos": "asd asd",
+      "dni": "52125487m",
+      "direccion": "calle loro, 78",
+      "tlf": "85412587",
+      "sexo": "mujer",
+      "id": 4
+    },
+    {
+      "nombre": "tre",
+      "apellidos": "ert",
+      "dni": "30256489j",
+      "direccion": "calle preciosa, 54",
+      "tlf": "85412587",
+      "sexo": "hombre",
+      "id": 5
+    },
+    {
+      "nombre": "botella",
+      "apellidos": "adsasd",
+      "dni": "45125478f",
+      "direccion": "calle casas, 67",
+      "tlf": "85412587",
+      "sexo": "mujer",
+      "id": 6
+    }
+  ]
+}

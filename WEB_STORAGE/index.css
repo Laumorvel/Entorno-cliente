@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Federo&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+body {
+    padding: 2em;
+}
+
+input {
+    box-shadow: 2px 2px 5px #999;
+}
+
+input[type="text"] {
+    width: 20%;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+div {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.notita {
+    background-color: rgb(238, 230, 122);
+    border-radius: 8px;
+    border: 15px;
+}
+
+.tachar {
+    text-decoration: line-through;
+    color: darkred;
+}
+
+.notita:hover {
+    background-color: rgb(241, 229, 55);
+}

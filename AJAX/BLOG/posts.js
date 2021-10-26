@@ -1,10 +1,17 @@
 const tabla = document.getElementById("tabla");
+const SERVER = 'http://localhost:3000';
+
+
 
 window.onload = function() {
     const peticion = new XMLHttpRequest();
     peticion.open('GET', 'http://localhost:3000/posts'); //no podemos traernos los dnis
     peticion.send();
-    let resul = false;
+
+
+
+
+
     peticion.addEventListener('load', function() {
         let posts = JSON.parse(peticion.responseText);
         let no = 1;
