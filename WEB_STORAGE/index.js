@@ -3,10 +3,17 @@ let newNota = document.getElementById("newNota");
 const hecho = document.getElementById("hecho").addEventListener("click", addNota);
 let cont = 0;
 let idNota = 0;
+const tabla = document.getElementById("table");
+
+
+/**
+ * Object.keys(localStorage) --> para que devuelva todas las keys
+ * JSON.parse(getItem)
+ */
+
 
 //RECARGAR TODAS LAS NOTAS GUARDADAS
 window.onload = function() {
-    localStorage.clear();
     for (let index = 0; index < localStorage.length; index++) {
         const element = localStorage.getItem(index);
         anadirNotaTablon(element);
@@ -52,6 +59,7 @@ const anadirNotaTablon = nota => {
     let eliminarButton = document.createElement("input");
     eliminarButton.type = "button";
     eliminarButton.setAttribute("value", "Eliminar");
+    eliminarButton.setAttribute("id", idNota);
     div.appendChild(eliminarButton);
     eliminarButton.addEventListener("click", eliminar);
 
@@ -64,7 +72,7 @@ function tachar(e) {
 }
 
 function eliminar(e) {
-    localStorage.removeItem(e.);
+    localStorage.removeItem(e.target.id);
     this.parentNode.remove();
 
 }
