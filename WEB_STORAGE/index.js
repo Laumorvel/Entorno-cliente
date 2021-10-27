@@ -45,6 +45,7 @@ const anadirNotaTablon = nota => {
     let a = document.createElement("a");
     div.appendChild(a);
     let texto = document.createTextNode(nota.text);
+    document.getElementById("newNota").value = "";
     a.appendChild(texto);
     tablon.appendChild(div);
 
