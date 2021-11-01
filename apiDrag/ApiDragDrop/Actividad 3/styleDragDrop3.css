@@ -58,3 +58,17 @@ body {
     background-color: #fff;
     color: #000;
 }
+
+.container2 {
+    justify-content: center;
+    display: flex;
+    margin-top: 3em;
+}
+
+.nuevaTarea input[type="text"] {
+    width: 25em;
+}
+
+.container2 input {
+    height: 3em;
+}
