@@ -47,11 +47,9 @@ var Rectangulo = /** @class */ (function () {
     function Rectangulo(base, altura) {
         this.base = base;
         this.altura = altura;
-        this.area = calculaArea(base, altura);
     }
+    Rectangulo.prototype.calculaArea = function () {
+        return this.base * this.altura;
+    };
     return Rectangulo;
 }());
-function calculaArea(base, altura) {
-    this.area = base * altura;
-    return this.area;
-}

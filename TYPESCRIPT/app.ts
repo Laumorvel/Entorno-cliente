@@ -58,16 +58,16 @@ class Rectangulo{
   base:number;
   altura:number;
 
-  area:number;
 
   constructor(base:number, altura:number){
     this.base = base;
     this.altura = altura;
-    this.area = calculaArea(base, altura);
   }
+  
+    calculaArea(){
+      return this.base * this.altura;
+
+    }
+  
 }
 
-function calculaArea( base:number, altura:number):number{
-  this.area = base * altura;
-  return this.area;
-  }
