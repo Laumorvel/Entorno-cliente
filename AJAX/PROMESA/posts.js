@@ -90,8 +90,6 @@ fetch(SERVER + '/posts')
 
 
 
-
-
 //BORRADO DE POST -- DELETE
 function borrar(e) {
     e.preventDefault(); //Es necesario porque de otra manera, irá a un enlace inexistente y solo queremos que borre el post
