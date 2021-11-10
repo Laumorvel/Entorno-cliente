@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // Uso de Let y Const
 var nombre = "Ricardo Tapia";
 var edad = 23;
@@ -53,3 +55,8 @@ var Rectangulo = /** @class */ (function () {
     };
     return Rectangulo;
 }());
+//crear un modulo de calculo que lo importemos en ts
+var modulo_1 = require("./modulo");
+var suma = new modulo_1.Calculo(5, 2);
+suma.sumar();
+suma.restar();

@@ -71,3 +71,14 @@ class Rectangulo{
   
 }
 
+//crear un modulo de calculo que lo importemos en ts
+import { Calculo } from "./modulo";
+
+let suma = new Calculo(5,2);
+
+suma.sumar();
+suma.restar();
+suma.multiplicar();
+suma.dividir();
+
+
