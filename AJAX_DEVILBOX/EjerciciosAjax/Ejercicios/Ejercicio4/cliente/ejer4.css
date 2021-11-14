@@ -1,0 +1,21 @@
+*:not(.title) {
+    font-size: 20px;
+}
+
+.title {
+    font-size: 28px;
+    margin: 2em 0;
+}
+
+.provincias {
+    width: 40%;
+    float: left;
+    padding: 1em 2em;
+    /*A sustituir cada vez que se clicke en una provincia*/
+}
+
+.municipios {
+    padding: 1em 2em;
+    width: 40%;
+    float: right;
+}

@@ -18,8 +18,6 @@ let boton = document.getElementById("comprobar").addEventListener("click", (e) =
         })
         .then(datos => {
             //Sacamos la respuesta
-            /*  const parser = new DOMParser();
-              const xml = parser.parseFromString(datos, "application/xml");*/
             let dato = JSON.parse(datos); //pasarlo a json pudiendo leerlo
             let resp = dato.disponible; //el contenido de los json no se pueden recuperar por tags sino que debe ser por elementos del objeto, puesto que lo que devuelve es un Object
 
