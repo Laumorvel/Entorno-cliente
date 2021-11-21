@@ -1,0 +1,11 @@
+body {
+    padding: 2em;
+}
+
+form#form {
+    display: inline-grid;
+}
+
+input {
+    margin-bottom: 1em;
+}

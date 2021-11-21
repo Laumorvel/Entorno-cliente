@@ -1,0 +1,12 @@
+#reset {
+  background-color: #f0ff48;
+}
+button:hover {
+  background-color: #95cd44;
+}
+p.numero {
+  font-weight: bold;
+}
+p.texto {
+  color: #106d0f;
+}

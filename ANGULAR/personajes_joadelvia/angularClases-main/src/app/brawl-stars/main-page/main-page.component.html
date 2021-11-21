@@ -1,0 +1,24 @@
+<h1>Brawl Stars</h1>
+<hr>
+<div class="row">
+    <div class="col">
+        <h2>Personajes:</h2>
+        <hr>
+        <ul>
+            <li *ngFor="let personaje of personajes; let indice = index">
+              {{indice + ". " + personaje.nombre + ": " + personaje.salud}}
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <h2>Añadir:</h2>
+        <hr>
+        <form (ngSubmit)="anadirPersonaje()">
+            <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre">
+            <!-- [value] = "nuevo.nombre"
+            (input) = "cambiarNombre($event)" -->
+            <input type="number" name="salud" placeholder="Salud" [(ngModel)]="salud">
+            <button type="submit">Añadir</button>
+        </form>
+    </div>
+</div>

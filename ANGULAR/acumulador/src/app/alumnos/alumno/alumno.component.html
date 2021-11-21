@@ -1,0 +1,26 @@
+
+<app-listado></app-listado>
+
+<h1>Alumnado</h1>
+
+<dl>
+    <dt>Nombre</dt>
+    <dt>{{nombre}}</dt>
+</dl>
+
+<dl>
+    <dt>Edad</dt>
+    <dt>{{edad}}</dt>
+</dl>
+
+
+<dl>
+    <dt>Info completa</dt>
+    <dt>{{nombre}}: {{edad}}</dt>
+
+    <dt>Nombre en mayuscula</dt>
+    <dt>{{nombreMayus}}</dt>
+</dl>
+
+<button (click)="cambiarNombre()">Cambiar nombre</button>
+<button (click)="cambiarEdad()">Cambiar edad</button>

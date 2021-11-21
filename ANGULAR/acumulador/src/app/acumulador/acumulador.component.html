@@ -1,0 +1,12 @@
+<div>
+    <p class="texto">Selecciona la cantidad base de tus operaciones:</p>
+    <button (click)="disminuir()">-</button>
+    <p class="numero">Base = {{incremento}}</p>
+    <button (click)="aumentar()">+</button>
+  </div>
+  <div>
+    <p class="texto">Realiza tu operación con base = {{incremento}}:</p>
+    <button (click)="acumula(incremento)">RESTAR</button>
+    <p class="numero">{{acumulador}} <button id="reset" (click)="acumulador=0">Reset</button></p>
+    <button (click)="acumula(incremento)">SUMAR</button>
+  </div>

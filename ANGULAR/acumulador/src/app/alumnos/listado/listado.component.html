@@ -1,0 +1,17 @@
+<h1>Listado de alumnos</h1>
+<ul>
+    <li *ngFor="let alumno of alumnos;
+    let i=index; let par=odd; let impar=even; let primero=first; let ultimo=last;" [ngClass]="{azul:par, verde:impar, rojo:primero, amari:ultimo}">{{i+1}}-{{alumno}}</li>
+    <!--ESTO SE LLAMA DIRECTIVAS-->
+    <!-- PROPIEDADES DEFINIDAS -> odd, even, first, last-->
+
+    <button (click)="eliminarAlumno()">Eliminar</button>
+    <h2 *ngIf="aprobados.length>0; else vacio">aprobados</h2>
+    <!-- AÑADIR EL QUE HA ELIMINADO-->
+    <ul>
+        <li *ngFor="let aprobado of aprobados;">{{aprobado}}</li>
+    </ul>
+    <ng-template #vacio>
+        <h2>Eres muy malo, no puedes suspender a todos</h2>
+    </ng-template>
+</ul>

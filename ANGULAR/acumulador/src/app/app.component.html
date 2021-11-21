@@ -1,0 +1,23 @@
+
+<app-listado></app-listado>
+<h1>{{title}}</h1>
+
+<!--INCREMENTO-->
+<div>
+<h4>Incremento</h4>
+<button (click)="incrementar(+1)">+1</button>
+<p>{{incremento}}</p>
+<button (click)="incrementar(-1)">-1</button><br><br>
+</div>
+
+<!--ACUMULADOR-->
+<div>
+<h4>Acumulador</h4>
+<button (click)="acumular(incremento)">+1</button>
+<p>{{acumulador}}</p>
+<button (click)="acumular(-incremento)">-1</button><br><br>
+</div>
+
+<!--RESET-->
+<button (click)="resetear()" id="reset">Reset</button>
+

@@ -8,6 +8,9 @@ fetch('https://intranetjacaranda.es/Ejercicios/Ejercicio5/servidor/cargaProvinci
         }
         return Promise.reject(response);
     })
+    .catch(error => { //solo para promesas. despues se transforma en json
+        console.log('Error en la petición', error);
+    })
     .then(datos => {
         let datoObject = JSON.parse(datos);
         let keys = Object.keys(datoObject); //como devuelve un objetos, conseguimos todas las claves

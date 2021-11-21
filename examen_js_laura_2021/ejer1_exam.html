@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1_exam</title>
+    <link rel="stylesheet" href="./ejer1_exam.css">
+</head>
+
+<body>
+    <div id="formularioDiv">
+        <form action="" method="post" id="form">
+            <label for="nombre">Nombre: <input type="text" name="nombre" id="nombre"></label>
+            <div id="sugerencias">
+                <ul id="list"></ul>
+            </div>
+            <label for="apellidos">Apellidos: <input type="text" name="apellidos" id="apellidos"></label>
+            <label for="login">Login: <input type="text" name="login" id="login"></label>
+            <div>
+                <ul id="disponibilidad"></ul>
+            </div>
+            <label for="password">Password: <input type="password" name="password" id="password"></label>
+            <label for="nacimiento">Nacimiento: <input type="date" name="nacimiento" id="nacimiento"></label>
+            <label for="edad">Edad: <input type="number" name="edad" id="edad" disabled></label>
+            <input type="submit" value="Registra usuario" id="submit">
+        </form>
+    </div>
+
+    <div class="botones">
+        <input type="button" value="Borrar datos" id="borrar">
+
+        <input type="button" value="Consulta usuarios" id="consulta">
+        <!--Obtiene el contenido del campo login-->
+
+        <input type="button" value="Consulta último login" id="ultimoLogin">
+    </div>
+
+    <div class="infoUser" id="infoUser"></div>
+    <!--Donde mostraremos el contenido de las consultas-->
+    <script src="./ejer1_exam.js"></script>
+</body>
+
+</html>
