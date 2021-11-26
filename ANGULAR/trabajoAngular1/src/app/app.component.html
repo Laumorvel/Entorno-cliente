@@ -1,0 +1,64 @@
+<div class="form">
+  <form action="">
+    <fieldset>
+      <legend class="title">Formulario de registro</legend>
+      <div>
+        <label for="nombre">Nombre: </label>
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="Nombre"
+          [(ngModel)]="nombre"
+        />
+      </div>
+
+      <div>
+        <label for="apellidos">Apellidos: </label>
+        <input
+          type="text"
+          name="apellidos"
+          id="apellidos"
+          placeholder="Apellidos"
+          [(ngModel)]="apellidos"
+        />
+      </div>
+
+      <div>
+        <label for="cargo">Cargo: </label>
+        <input
+          type="text"
+          name="cargo"
+          id="cargo"
+          placeholder="Cargo"
+          [(ngModel)]="cargo"
+        />
+      </div>
+
+      <div>
+        <label for="nombre">Salario: </label>
+        <input
+          type="number"
+          name="salario"
+          id="salario"
+          min="0"
+          placeholder="Salario"
+          [(ngModel)]="salario"
+        />
+      </div>
+
+      <div class="button">
+        <input type="submit" value="Enviar" (click)="agregarEmpleado()" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<p class="title">Listado de usuarios registrados</p>
+<app-lista-empleados
+  *ngFor="let empleado of empleados; let i = index"
+  [empleadoLista]="empleado"
+  [indice]="i"
+  class="listado"
+></app-lista-empleados>
+<!--Hay que darle nombres identificativos a los elementos que mencionamos del elemento hijo-->

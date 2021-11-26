@@ -2,10 +2,11 @@
 <hr>
 <div class="row">
     <div class="col">
+      <app-personajes [personajes]="personajes">"</app-personajes><!--Aquí indicamos la lista de personajes que nos hemos traedos-->
         <h2>Personajes:</h2>
         <hr>
         <ul>
-            <li *ngFor="let personaje of personajes; let indice = index">
+            <li *ngFor="let personaje of personajes; let indice = index"><!--Como lo que quiero es repetir elementos li, lo añadimos al li-->
               {{indice + ". " + personaje.nombre + ": " + personaje.salud}}
             </li>
         </ul>
@@ -14,10 +15,10 @@
         <h2>Añadir:</h2>
         <hr>
         <form (ngSubmit)="anadirPersonaje()">
-            <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre">
+            <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre"><!--nuevo.nombre-->
             <!-- [value] = "nuevo.nombre"
             (input) = "cambiarNombre($event)" -->
-            <input type="number" name="salud" placeholder="Salud" [(ngModel)]="salud">
+            <input type="number" name="salud" placeholder="Salud" [(ngModel)]="salud"><!--nuevo.salud-->
             <button type="submit">Añadir</button>
         </form>
     </div>

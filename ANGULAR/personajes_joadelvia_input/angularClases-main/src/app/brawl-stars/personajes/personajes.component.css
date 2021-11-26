@@ -1,0 +1,14 @@
+/*Cuando sea mayor o igual a 2.000*/
+.rojo{
+color: rgb(167, 23, 23);
+}
+
+/*Cuando sea mayor o igual a 500 y menor de 2.000*/
+.verde{
+  color: rgb(96, 212, 173);
+}
+
+/*Cuando sea menor de 500*/
+.amarillo{
+  color: rgb(218, 215, 53);
+}

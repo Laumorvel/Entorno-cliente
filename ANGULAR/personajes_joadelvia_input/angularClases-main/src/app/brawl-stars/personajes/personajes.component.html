@@ -1,0 +1,18 @@
+<h2>Personajes:</h2>
+<hr>
+<ul>
+    <li *ngFor="let personaje of personajes" [ngClass]="{rojo: personaje.salud>=2000, verde: personaje.salud >= 500 && personaje.salud < 2000,
+    amarillo: personaje.salud < 500}">
+        {{personaje.nombre}} - {{personaje.salud| number}}
+    </li>
+</ul>
+
+<!--
+  OTRA FORMA DE APLICAR CLASES:
+
+  (En el operador ternario podemos introducir +2 condiciones)
+  [className] = "personaje.salud >= 3000 ? verde : personaje.salud < 3000 ? rojo : amarillo"
+
+  No se refiere a clases sino a propiedades con lo que deberíamos crear una propiedade en el componente
+  rojo:string = "rojo" (como un atributo simplemente).
+-->

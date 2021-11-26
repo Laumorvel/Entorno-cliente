@@ -1,0 +1,6 @@
+<label for="caract">Característica: </label>
+<input type="text" #nuevaCaracteristica />
+<!--Se utiliza # cuando queremos hacer referencia a este elemento del dom desde este mismo html-->
+<button (click)="agregarCaracteristicas(nuevaCaracteristica.value)">
+  Añadir característica</button
+><!--es necesario indicar que lo que queremos es su valor  -  .VALUE  -->
