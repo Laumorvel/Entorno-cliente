@@ -1,0 +1,11 @@
+<!-- Búsqueda -->
+<h5>Buscar:</h5>
+<input
+    type="text"
+    class="form-control"
+    placeholder="Buscar gifs..."
+    [(ngModel)]="value"
+    name="value"
+    (keyup.enter)=guardaBusquedaEnHistorial();
+>
+<!-- End Búsqueda -->
