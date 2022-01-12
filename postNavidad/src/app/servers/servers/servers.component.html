@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" *ngFor="let server of servers"
+        [routerLink]="['/servers', server.id]" [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}" fragment="loading"><!--1 es true//0 es false
+        Se ha usado un operador ternario para que solo el user con id 3 pueda editar-->
+          {{ server.name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

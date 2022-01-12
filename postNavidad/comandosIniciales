@@ -1,0 +1,11 @@
+ng g m users -m app
+ng g m servers -m app
+ng g c users/users --skip-tests  -is --export
+ng g c servers/servers --skip-tests  -is --export
+ng g c users/user --skip-tests  -is
+ng g c servers/server --skip-tests  -is
+ng g c servers/edit-server --skip-tests  -is
+
+
+Me he quedado en la parte 5
+Desde el edit-server.component.ts rescataremos los query params. En el método subscribe de los query params es donde determinaremos si estamos autorizados a editar el servidor o no.

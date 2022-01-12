@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col col-sm-10 col-md-8">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/servers">Servers</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/users">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col col-sm-10 col-md-8">
+      <router-outlet></router-outlet><!--NO SIRVE PARA LAS RUTAS HIJAS-->
+    </div>
+  </div>
+
+</div>
