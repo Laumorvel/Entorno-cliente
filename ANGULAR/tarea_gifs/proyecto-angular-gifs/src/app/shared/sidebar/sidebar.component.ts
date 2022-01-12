@@ -14,6 +14,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  historial = this.servicio.historial;
+  }
 
 
-}
+
