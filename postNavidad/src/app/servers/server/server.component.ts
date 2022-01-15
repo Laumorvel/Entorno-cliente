@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServersService } from '../servers.service';
 import { Server } from '../interfaces/server.interface';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-server',
@@ -16,17 +16,29 @@ export class ServerComponent implements OnInit {
 
   ngOnInit() {
     //Ocurre la primera vez
-    const id = +this.route.snapshot.params['id'];//ESTO NOS DEVUELVE UN STRING ('3'). CON EL SIGNO '+' LO CASTEAMOS A INTEGER
-    this.server = this.serversService.getServer(id);
 
-    //Ocurre cada vez que cambie puesto que es un observable y se activará con el cambio en params
+    /* //Ocurre cada vez que cambie puesto que es un observable y se activará con el cambio en params
     this.route.params.subscribe((params: Params) => {
       this.server = this.serversService.getServer(+params['id']);//ESTO TAMBIÉN DEVUELVE UN STRING.
-    });
+    });*/
+
+    //obtenemos el server usando un resolver
+    this.route.data.subscribe( //Utilizamos el data observable de la ruta y nos suscribimos
+      (data: Data) => {
+        //Asignamos a nuestro server el valor del server proviente de la data de nuestro parámetro
+        this.server = data['server']; //tiene que tener el mismo nombre que se le ha dado en el AppRouting
+      }
+      )
+     /* const id = +this.route.snapshot.params['id'];//ESTO NOS DEVUELVE UN STRING ('3'). CON EL SIGNO '+' LO CASTEAMOS A INTEGER
+      this.server = this.serversService.getServer(id);
+
+      this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});*/
   }
 
   onEdit() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
+  }
   }
 
-}
+
+

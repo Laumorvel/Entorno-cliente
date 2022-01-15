@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ServersComponent implements OnInit {
   public servers: Server[] = [];
+  public server!: Server;
+
   constructor(private serversService: ServersService,
     private router: Router, private route: ActivatedRoute) { }
 

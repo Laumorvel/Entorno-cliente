@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styles: [
   ]
 })
-export class UserComponent implements OnInit, OnDestroy {
+export class UserComponent implements OnInit{
   user!: {id: number, name: string};
   constructor(private route: ActivatedRoute) { }
 
