@@ -8,19 +8,23 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { AuthGuard } from './AuthGuard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { LoginComponent } from './home/login/login.component';
 
 //Busca en cascada, con lo que si colocamos antes el path:'**', siempre entrará ahí.
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
   ,{ //ESTO SON RUTAS ANIDADAS O HIJAS
     path: 'servers',
-    //canActivate:[AuthGuard],
+    canActivate:[AuthGuard],
     canActivateChild: [AuthGuard],
     component: ServersComponent,children: [
     { path: ':id/edit', component: EditServerComponent,canDeactivate: [CanDeactivateGuard],

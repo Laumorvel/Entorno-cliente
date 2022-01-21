@@ -1,0 +1,62 @@
+
+{
+  "users": [
+    { "id": 1, "email": "bruno@email.com", "password": "bruno" },
+
+    { "id": 2, "email": "techie@email.com", "password": "techie" },
+
+    { "id": 3, "email": "nilson@email.com", "password": "nilson" },
+
+    { "id": 4, "email": "nilson1@email.com", "password": "nilson" },
+
+    { "id": 5, "email": "nilson2@email.com", "password": "nilson" },
+
+    { "id": 6, "email": "nilson3@email.com", "password": "nilson" },
+
+    { "id": 7, "email": "nilson4@email.com", "password": "nilson" },
+    
+    { "id": 8, "email": "nilson7@email.com", "password": "nilson" },
+
+    { "id": 9, "email": "nilson8@email.com", "password": "nilson" }
+  ],
+
+  "servers": [
+    {"id": 1, "name": "Server 1"},
+
+    {"id": 2, "name": "Server 2"},
+
+    {"id": 3, "name": "Server 3"},
+
+    {"id": 4, "name": "Server 4"},
+
+    {"id": 5, "name": "Server 5"},
+
+    {"id": 6, "name": "Server 6"},
+
+    {"id": 7, "name": "Server 7"},
+
+    {"id": 8, "name": "Server 8"},
+
+    {"id": 9, "name": "Server 9"}
+  ],
+
+  "serverUser": [
+    {"idServer": 1, "idUser": 1},
+
+    {"idServer": 2, "idUser": 2},
+
+    {"idServer": 3, "idUser": 3},
+
+    {"idServer": 4, "idUser": 4},
+
+    {"idServer": 5, "idUser": 5},
+    
+    {"idServer": 6, "idUser": 6},
+
+    {"idServer": 7, "idUser": 7},
+
+    {"idServer": 8, "idUser": 8},
+
+    {"idServer": 9, "idUser": 9}
+  ]
+}

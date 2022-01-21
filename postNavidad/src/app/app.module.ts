@@ -12,6 +12,9 @@ import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.s
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { LoginComponent } from './home/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HomeComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UsersModule,
-    ServersModule
+    ServersModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ServersService, AuthGuard, AuthService, CanDeactivateGuard, ServerResolver],  bootstrap: [AppComponent]
 })

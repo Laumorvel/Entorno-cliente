@@ -30,8 +30,15 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
       }
       );
 
-      const id = +this.route.snapshot.params['id']
+      this.route.params.subscribe(
+        (params: Params) => {
+          this.server = this.serversService.getServer(+params['id']);
+
+        }
+      )
+      const id = +this.route.snapshot.params['id'];
       this.server = this.serversService.getServer(id);
+      console.log(this.server);
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
