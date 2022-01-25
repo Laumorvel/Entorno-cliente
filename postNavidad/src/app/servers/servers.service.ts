@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Server } from './interfaces/server.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -7,8 +7,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ServersService {
+export class ServersService implements OnInit{
   constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+
+  }
 
   private servers: Server[] = [];
   private baseUrl: string = environment.baseUrl;
@@ -47,6 +51,12 @@ export class ServersService {
   }
 
   getServer(id: number): Server {
+    this.getServers().subscribe(
+      (resp) =>{
+        console.log(resp);
+        this.servers = resp;
+      }
+    )
     const server = this.servers.find((s) => {
       return s.id === id;
     });

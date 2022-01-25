@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
-import { User } from 'src/app/servers/interfaces/user.interface';
+import Swal from 'sweetalert2';
 import { UsersService } from '../../users/users.service';
 
 @Component({
@@ -28,16 +27,21 @@ export class LoginComponent implements OnInit {
       next: (resp) => {
         console.log(resp); //cogemos el token y lo almacenamos en el localStorage
         localStorage.setItem('jwt', JSON.stringify(resp));
-        this.authService.loggedIn = true; //cambiamos este atributo solo si el user se ha identificado. Para uso del guardían para el componente users.
+        //this.authService.loggedIn = true; //cambiamos este atributo solo si el user se ha identificado. Para uso del guardían para el componente users.
         //para que no se pueda acceder a los servers por url directamente
 
         //subo el id del usuario a localStorage
         this.getIdUser();
-        this.router.navigateByUrl('/servers');
+        this.router.navigateByUrl('servers');
       },
       error: (e) => {
-        console.log(e);
-        alert('Introduzca un usuario y contraseña válido');
+        console.log(e.message);
+        Swal.fire({ //para que salte un alert si los datos introducidos no están en el database.json
+          title: 'Error al iniciar sesión',
+          text: 'Email o password proporcionados incorrectos',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        })
       },
     });
 

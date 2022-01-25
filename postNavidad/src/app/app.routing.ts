@@ -8,7 +8,6 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { AuthGuard } from './AuthGuard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
-import { ServerResolver } from './servers/server/server-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginComponent } from './home/login/login.component';
 
@@ -22,18 +21,19 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   }
-  ,{ //ESTO SON RUTAS ANIDADAS O HIJAS
-    path: 'servers',
-    canActivate:[AuthGuard],
-    canActivateChild: [AuthGuard],
-    component: ServersComponent,children: [
-    { path: ':id/edit', component: EditServerComponent,canDeactivate: [CanDeactivateGuard],
-    resolve: {server: ServerResolver} },
-    { path: ':id', component: ServerComponent }
+  ,{
+    path: 'servers',component: ServersComponent,
+    canActivate: [AuthGuard],
+    children: [
+    { path: ':id/edit', component: EditServerComponent,canDeactivate: [CanDeactivateGuard]},
+    //resolve: {server: ServerResolver} },
+    { path: ':id', canActivate:[AuthGuard], component: ServerComponent }
   ]
   },
   {
-    path: 'users', component: UsersComponent, children: [
+    //TAMBIÉN HE AÑADIDO AQUÍ AL GUARDIÁN PARA QUE NO SE PUEDA ACCEDER A USER SIN EL TOKEN CORRESPONDIENTE
+    path: 'users', component: UsersComponent,
+    children: [
     { path: ':id/:name', component: UserComponent },
   ]
   },

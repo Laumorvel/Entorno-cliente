@@ -26,7 +26,11 @@ export class ServerComponent implements OnInit {
     this.route.data.subscribe( //Utilizamos el data observable de la ruta y nos suscribimos
       (data: Data) => {
         //Asignamos a nuestro server el valor del server proviente de la data de nuestro parámetro
-        this.server = data['server']; //tiene que tener el mismo nombre que se le ha dado en el AppRouting
+       // this.server = data['server']; //tiene que tener el mismo nombre que se le ha dado en el AppRouting
+        const id = +this.route.snapshot.params['id'];//ESTO NOS DEVUELVE UN STRING ('3'). CON EL SIGNO '+' LO CASTEAMOS A INTEGER
+        //this.server = this.serversService.getServer(id);
+        this.server = data['server'];
+        console.log(this.server);
       }
       )
      /* const id = +this.route.snapshot.params['id'];//ESTO NOS DEVUELVE UN STRING ('3'). CON EL SIGNO '+' LO CASTEAMOS A INTEGER
@@ -37,6 +41,16 @@ export class ServerComponent implements OnInit {
 
   onEdit() {
     this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
+    // this.route.params.subscribe(
+    //   (data: Data) => {
+    //     this.server = data['server'];
+    //     console.log(this.server);
+    //     this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
+
+    //   }
+    //)
+
+
   }
   }
 

@@ -10,7 +10,6 @@ import { AuthGuard } from './AuthGuard.service';
 import { AuthService } from './auth.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ServerResolver } from './servers/server/server-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +31,6 @@ import { HttpClientModule} from '@angular/common/http'
     FormsModule,
     HttpClientModule
   ],
-  providers: [ServersService, AuthGuard, AuthService, CanDeactivateGuard, ServerResolver],  bootstrap: [AppComponent]
+  providers: [ServersService, AuthGuard, AuthService, CanDeactivateGuard],  bootstrap: [AppComponent]
 })
 export class AppModule { }

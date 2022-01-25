@@ -25,7 +25,6 @@ export class ServersComponent implements OnInit {
     this.serversService.getServers().subscribe(
       //petición del observable para conseguir los servers
       (resp) => {
-        console.log(resp);
         this.servers = resp;
       }
     );
