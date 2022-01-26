@@ -5,5 +5,24 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let libro of libros">
+      <ion-thumbnail>
+        <img src="libro.img">
+      </ion-thumbnail>
+      <ion-label class="infoLibros">
+        <ion-text color="dark">
+          <h3>{{libro.titulo}}</h3>
+        </ion-text>
+        <ion-text color="medium">
+          <p>Autor:</p>
+          <p>{{libro.autor}}</p>
+        </ion-text>
+        <ion-text color="medium">
+          <p>Año:</p>
+          <p>{{libro.anio}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
