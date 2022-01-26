@@ -1,19 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Inicio </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title>Bienvenido iBiblioteca!</ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
+    <ion-card-content>
+      iBiblioteca es una aplicación desarrollada con Ionic que permite gestionar
+      una biblioteca de un centro educativo. <br />
+      Para acceder a la biblioteca pulsa en el siguiente botón: <br />
+      <ion-button class="button" fill="clear" routerLink="/biblioteca">
+        <ion-icon
+          name="school-sharp"
+          color="dark"
+          slot="start"
+          class="icon"
+        ></ion-icon
+        ><!--slot permite que haya más separación-->
+        <ion-text color="dark">Acceso a iBiblioteca</ion-text>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 
-  </div>
+  <ion-content>
+    <ion-card class="card2">
+      <ion-card-header>
+        <ion-card-title>Información sobre el autor</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Aplicación desarrollada por Laura Moreno
+        <ion-button class="button" fill="clear" routerLink="/autor">
+          <ion-icon name="person" slot="start" color="dark" class="icon"></ion-icon>
+          <ion-text color="dark">Consulta información</ion-text>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>
