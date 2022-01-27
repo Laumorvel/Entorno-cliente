@@ -8,7 +8,7 @@
   <ion-list>
     <ion-item *ngFor="let libro of libros ">
       <ion-thumbnail>
-        <img src="">
+        <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
       </ion-thumbnail>
       <ion-label class="infoLibros">
         <ion-text color="dark">
@@ -18,7 +18,7 @@
           <p>Autor: {{libro.author_name}}</p>
         </ion-text>
         <ion-text color="medium">
-          <p>Año: {{libro.publish_year}}</p>
+          <p>Año: {{libro.first_publish_year}}</p>
         </ion-text>
       </ion-label>
     </ion-item>

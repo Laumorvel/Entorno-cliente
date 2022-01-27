@@ -9,7 +9,7 @@ import { Doc, Welcome } from './interfaces/Foundation';
 export class OpenLibraryService {
   constructor(private http: HttpClient) {}
 
-  private url_base: string = 'http://openlibrary.org/search.json?q=cat';//Encontrar forma de conseguir un json con la info de los libros
+  private url_base: string = 'http://openlibrary.org/search.json?title=sun';//Encontrar forma de conseguir un json con la info de los libros
 
   //PARÁMETROS PARA RECIBIR SOLO 10 LIBROS
   private params = new HttpParams()
