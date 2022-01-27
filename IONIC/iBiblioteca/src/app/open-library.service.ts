@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Libro } from './interfaces/libro';
+import { Doc, Welcome } from './interfaces/Foundation';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +9,16 @@ import { Libro } from './interfaces/libro';
 export class OpenLibraryService {
   constructor(private http: HttpClient) {}
 
-  private url_base: string = 'https://openlibrary.org/books';
+  private url_base: string = 'http://openlibrary.org/search.json?q=cat';//Encontrar forma de conseguir un json con la info de los libros
 
   //PARÁMETROS PARA RECIBIR SOLO 10 LIBROS
   private params = new HttpParams()
   .set('limit','10');
 
 
-  buscaLibros(): Observable<Libro[]> {
-    return this.http.get<Libro[]>(this.url_base,{params: this.params});
+  buscaLibros(): Observable<Welcome> {
+    return this.http.get<Welcome>(this.url_base,{params: this.params});
   }
+
+
 }
