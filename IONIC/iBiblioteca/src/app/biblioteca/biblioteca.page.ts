@@ -11,11 +11,27 @@ export class BibliotecaPage implements OnInit {
   constructor(private openLibraryService: OpenLibraryService) {}
 
   ngOnInit() {
-    this.getLibros();
+    /*this.getLibros();*/
+    //Ya no es necesario cargar los libros en cuanto entramos
   }
 
-  libros: Doc[];
+  libros: Doc[]=[];
+  search: string="";
 
+  getLibros(search: string) {
+    this.search = search;
+    this.openLibraryService.buscaLibros(this.search).subscribe({
+      next: resp => {
+        console.log(resp);
+        this.libros = resp.docs;
+      },
+      error: e => {
+        console.log(e);
+      },
+    });
+  }
+
+  /*
   getLibros() {
     this.openLibraryService.buscaLibros().subscribe({
       next: (resp) => {
@@ -30,5 +46,5 @@ export class BibliotecaPage implements OnInit {
         console.log("NO ok");
       }
     });
-  }
+  }*/
 }

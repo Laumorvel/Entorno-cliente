@@ -5,7 +5,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+
+    <app-busqueda (onEnter)="getLibros($event)"></app-busqueda>
+
+  <ion-list><!--LIBROS-->
     <ion-item button *ngFor="let libro of libros ">
       <ion-thumbnail>
         <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
@@ -21,7 +24,7 @@
           <p>Año: {{libro.first_publish_year}}</p>
         </ion-text>
       </ion-label>
-      <ion-icon name="chevron-forward-outline" item-end></ion-icon>
+     <a [routerLink]="['/detalle',libro.isbn[4]]"> <ion-icon name="chevron-forward-outline" item-end></ion-icon></a><!--Le paso el isbn para poder tenerlo en la siguiente página-->
     </ion-item>
   </ion-list>
 </ion-content>

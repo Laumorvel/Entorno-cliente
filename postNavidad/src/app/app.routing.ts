@@ -25,9 +25,9 @@ const routes: Routes = [
     path: 'servers',component: ServersComponent,
     canActivate: [AuthGuard],
     children: [
-    { path: ':id/edit', component: EditServerComponent,canDeactivate: [CanDeactivateGuard]},
+    { path: ':id/edit', component: EditServerComponent},
     //resolve: {server: ServerResolver} },
-    { path: ':id', canActivate:[AuthGuard], component: ServerComponent }
+    { path: ':id', component: ServerComponent }
   ]
   },
   {

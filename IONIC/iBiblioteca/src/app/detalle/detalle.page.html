@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a routerLink="/biblioteca"><ion-icon  name="caret-back-outline"></ion-icon></a>
+      {{ libro.title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="ver"> <!-- si la propiedad ver es true, siginifica que hay respuesta de la petición y se muestran los detalles -->
+
+    <ion-card>
+
+        <img src="http://covers.openlibrary.org/b/isbn/{{libro.isbn[2]}}-M.jpg">
+
+      <ion-card-header>
+        <ion-card-title>{{ libro.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+          <ion-text color="dark">
+              <p><b>Autor:</b> {{libro.author_name}}</p>
+          </ion-text>
+          <ion-text color="dark">
+              <p><b>Año:</b> {{libro.first_publish_year}}</p>
+          </ion-text>
+          <ion-text color="dark">
+              <p><b>ISBN:</b> {{libro.isbn[2]}}</p>
+          </ion-text>
+          <ion-text color="dark">
+              <p><b>Editorial: {{libro.publisher[0]}} </b></p>
+          </ion-text>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

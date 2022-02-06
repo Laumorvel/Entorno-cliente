@@ -10,13 +10,12 @@ import Swal from 'sweetalert2';
 export class AuthGuard implements CanActivate, CanActivateChild {
 private comprobacion: boolean = false;
   constructor(private authService: AuthService, private router:Router){}
-  private token = JSON.parse(<string>localStorage.getItem('jwt')).access_token;
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean | any{
-  this.authService.authenticate().subscribe({
+  return this.authService.authenticate().subscribe({
       next: (resp) => {
        console.log(resp);
-        this.comprobacion = true;
+        return true;
       },
       error: (e) => {
         console.log(e.message);
@@ -27,11 +26,11 @@ private comprobacion: boolean = false;
           confirmButtonText: 'OK'
         })
         this.router.navigate(['']);
-        this.comprobacion = false;
+        return false;
       }
 
-      });
-      return this.comprobacion;
+    });
+
     }
 
 

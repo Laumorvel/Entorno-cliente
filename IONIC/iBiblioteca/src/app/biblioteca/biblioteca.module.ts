@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BibliotecaPageRoutingModule } from './biblioteca-routing.module';
 
 import { BibliotecaPage } from './biblioteca.page';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { BibliotecaPage } from './biblioteca.page';
     IonicModule,
     BibliotecaPageRoutingModule
   ],
-  declarations: [BibliotecaPage]
+  declarations: [BibliotecaPage, BusquedaComponent]
 })
 export class BibliotecaPageModule {}
