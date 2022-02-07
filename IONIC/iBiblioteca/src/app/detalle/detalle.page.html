@@ -1,18 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <a routerLink="/biblioteca"><ion-icon  name="caret-back-outline"></ion-icon></a>
+      <a routerLink="/biblioteca"><ion-icon  name="chevron-back-outline"></ion-icon></a>
       {{ libro.title }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  fullscreen>
   <div *ngIf="ver"> <!-- si la propiedad ver es true, siginifica que hay respuesta de la petición y se muestran los detalles -->
 
     <ion-card>
 
-        <img src="http://covers.openlibrary.org/b/isbn/{{libro.isbn[2]}}-M.jpg">
+        <img  class="img" src="http://covers.openlibrary.org/b/isbn/{{libro.isbn[2]}}-M.jpg">
 
       <ion-card-header>
         <ion-card-title>{{ libro.title }}</ion-card-title>

@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./autor/autor.module').then( m => m.AutorPageModule)
   },
   {
-    path: 'detalle',
+    path: 'detalle/:isbn',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
   }
 ];

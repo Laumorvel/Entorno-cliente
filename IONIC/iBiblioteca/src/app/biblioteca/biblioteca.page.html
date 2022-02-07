@@ -9,7 +9,7 @@
     <app-busqueda (onEnter)="getLibros($event)"></app-busqueda>
 
   <ion-list><!--LIBROS-->
-    <ion-item button *ngFor="let libro of libros ">
+    <ion-item button *ngFor="let libro of libros" (click)="onClick(libro.isbn[4])">
       <ion-thumbnail>
         <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
       </ion-thumbnail>

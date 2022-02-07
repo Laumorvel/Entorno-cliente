@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Doc, Welcome } from '../interfaces/Foundation';
 import { OpenLibraryService } from '../open-library.service';
 
@@ -8,7 +9,7 @@ import { OpenLibraryService } from '../open-library.service';
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
-  constructor(private openLibraryService: OpenLibraryService) {}
+  constructor(private openLibraryService: OpenLibraryService, private router: Router) {}
 
   ngOnInit() {
     /*this.getLibros();*/
@@ -29,6 +30,10 @@ export class BibliotecaPage implements OnInit {
         console.log(e);
       },
     });
+  }
+
+  onClick(isbn: string){
+    this.router.navigate(['/detalle',isbn]);
   }
 
   /*

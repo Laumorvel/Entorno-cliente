@@ -7,13 +7,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class BusquedaComponent implements OnInit {
 
+  @Output() onEnter: EventEmitter<string> = new EventEmitter();//entre padre e hijo
   constructor() { }
 
   ngOnInit() {}
 
   search:string="";
 
-  @Output() onEnter: EventEmitter<string> = new EventEmitter();//entre padre e hijo
 
   searchBooks(){
     this.onEnter.emit(this.search);
