@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Doc, Welcome } from '../interfaces/Foundation';
 import { OpenLibraryService } from '../open-library.service';
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-biblioteca',
@@ -9,31 +10,59 @@ import { OpenLibraryService } from '../open-library.service';
   styleUrls: ['./biblioteca.page.scss'],
 })
 export class BibliotecaPage implements OnInit {
-  constructor(private openLibraryService: OpenLibraryService, private router: Router) {}
+  encodedData: any;
+  scannedBarCode: {};
+  barcodeScannerOptions: BarcodeScannerOptions;
+
+  constructor(
+    private openLibraryService: OpenLibraryService,
+    private router: Router,
+    private scanner: BarcodeScanner
+  ) {
+    this.encodedData = "Programming isn't about what you know";
+
+    this.barcodeScannerOptions = {
+      showTorchButton: true,
+      showFlipCameraButton: true,
+    };
+  }
 
   ngOnInit() {
     /*this.getLibros();*/
     //Ya no es necesario cargar los libros en cuanto entramos
   }
 
-  libros: Doc[]=[];
-  search: string="";
+  libros: Doc[] = [];
+  search: string = '';
 
   getLibros(search: string) {
     this.search = search;
     this.openLibraryService.buscaLibros(this.search).subscribe({
-      next: resp => {
+      next: (resp) => {
         console.log(resp);
         this.libros = resp.docs;
       },
-      error: e => {
+      error: (e) => {
         console.log(e);
       },
     });
   }
 
-  onClick(isbn: string){
-    this.router.navigate(['/detalle',isbn]);
+  onClick(isbn: string) {
+    this.router.navigate(['/detalle', isbn]); // , { relativeTo: this.route , queryParamsHandling: 'preserve'});
+  }
+
+
+  scanBRcode() {
+    this.scanner
+      .scan()
+      .then((res) => {
+        this.scannedBarCode = res;
+        this.router.navigate(['/detalle',res.text]);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   }
 
   /*

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title *ngIf="ver">
       <a routerLink="/biblioteca"><ion-icon  name="chevron-back-outline"></ion-icon></a>
       {{ libro.title }}
     </ion-title>

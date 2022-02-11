@@ -5,10 +5,30 @@
 </ion-header>
 
 <ion-content>
-
+<div class="busquedas">
     <app-busqueda (onEnter)="getLibros($event)"></app-busqueda>
+   <!-- <ion-button routerLink='scanner'>Scanner</ion-button>-->
+  </div>
 
-  <ion-list><!--LIBROS-->
+  <ion-card>
+    <ion-button color="danger" (click)="scanBRcode()" expand="block">
+        Scan Barcode
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <div *ngIf="scannedBarCode">
+        <ion-item>
+            Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
+        </ion-item>
+        <ion-item>
+            Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
+        </ion-item>
+    </div>
+  </ion-card>
+
+
+  <ion-list class="lista"><!--LIBROS-->
     <ion-item button *ngFor="let libro of libros" (click)="onClick(libro.isbn[4])">
       <ion-thumbnail>
         <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">

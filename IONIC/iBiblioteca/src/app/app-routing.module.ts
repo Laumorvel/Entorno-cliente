@@ -15,17 +15,17 @@ const routes: Routes = [
     loadChildren: () => import('./curriculum/curriculum.module').then( m => m.CurriculumPageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'autor',
     loadChildren: () => import('./autor/autor.module').then( m => m.AutorPageModule)
   },
   {
     path: 'detalle/:isbn',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
