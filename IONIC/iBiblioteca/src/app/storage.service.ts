@@ -24,10 +24,13 @@ export class StorageService {
   // Create and expose methods that users of this service can
   // call, for example:
   async set(key: string, value: any) {
+    this.favoritos.push(value);
     return await this._storage?.set(key, value);
   }
 
-  async remove(key: string){
+  async remove(key: string, libro: Doc){
+    let index = this.favoritos.indexOf(libro);
+    this.favoritos.splice(index,1);
     return await this._storage.remove(key);
   }
 
@@ -43,11 +46,11 @@ export class StorageService {
     return await this._storage.length();
   }
 
-  async getFavorites(){
-    for (let index = 0; index < localStorage.length; index++) {
-      const book = localStorage[index];
-      this.favoritos.push(book);
-    }
+  async cargaFavoritos(){
+    this._storage.forEach(libro => {
+      this.favoritos.push(libro);
+    });
     return this.favoritos;
   }
+
 }

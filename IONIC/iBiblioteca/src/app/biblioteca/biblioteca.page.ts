@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Doc} from '../interfaces/Foundation';
 import { OpenLibraryService } from '../open-library.service';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-biblioteca',
@@ -17,7 +18,8 @@ export class BibliotecaPage implements OnInit {
   constructor(
     private openLibraryService: OpenLibraryService,
     private router: Router,
-    private scanner: BarcodeScanner
+    private scanner: BarcodeScanner,
+    private storage: StorageService
   ) {
     this.encodedData = "Programming isn't about what you know";
 
@@ -34,13 +36,17 @@ export class BibliotecaPage implements OnInit {
 
   libros: Doc[] = [];
   search: string = '';
+  favoritos: Doc[] = [];
+  fav: boolean = false;
+  lib: boolean = false;
 
   getLibros(search: string) {
+    this.fav = false;
     this.search = search;
     this.openLibraryService.buscaLibros(this.search).subscribe({
       next: (resp) => {
-        console.log(resp);
         this.libros = resp.docs;
+        this.lib = true;
       },
       error: (e) => {
         console.log(e);
@@ -63,6 +69,16 @@ export class BibliotecaPage implements OnInit {
       .catch((err) => {
         alert(err);
       });
+  }
+
+  cargaFavoritos(){
+    this.lib = false;
+    this.fav = true;
+    this.storage.cargaFavoritos().then(
+      resp =>{
+        this.favoritos = resp;
+      }
+    )
   }
 
   /*

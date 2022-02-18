@@ -14,15 +14,20 @@ export class DetallePage implements OnInit {
   ver: boolean = false;
   libro: Doc;
   estrella:string = 'star-outline';
-  librosFavoritos: Doc[] = [];
 
   constructor(private openLibraryService: OpenLibraryService,
-              private activeRoute: ActivatedRoute,
-              private storage: StorageService) { }
+    private activeRoute: ActivatedRoute,
+    private storage: StorageService) { }
+
+    librosFavoritos: Doc[] = [];
 
   ngOnInit() {
     this.getLibro();  //para realizar la llamada en cuanto se cargue la página
-
+    this.storage.cargaFavoritos().then(
+      resp => {
+        this.librosFavoritos = resp;
+      }
+    )
   }
 
   getLibro(){
@@ -32,6 +37,7 @@ export class DetallePage implements OnInit {
         this.libro = data.docs[0];
         this.ver = true;
         this.getNombreEstrella();
+        console.log(this.storage.favoritos)
       },
       error: e =>{
         console.log(e);
@@ -43,14 +49,16 @@ export class DetallePage implements OnInit {
     if(this.estrella == 'star-outline'){
       this.estrella = 'star';
       this.storage.set(this.libro.title, this.libro);
+      console.log(this.storage.favoritos)
     }else{
       this.estrella = 'star-outline';
-      this.storage.remove(this.libro.title);
+      this.storage.remove(this.libro.title, this.libro);
+      console.log(this.storage.favoritos);
     }
   }
 
   getNombreEstrella(){
-    console.log(this.storage);
+    console.log(this.storage.favoritos);
     this.storage.getItem(this.libro.title).then(
       resp =>{
         if(resp){
@@ -59,6 +67,7 @@ export class DetallePage implements OnInit {
           this.estrella = 'star-outline';
         }
       }
+
     )
   }
 
