@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Doc, Welcome } from '../interfaces/Foundation';
+import { Router } from '@angular/router';
+import { Doc} from '../interfaces/Foundation';
 import { OpenLibraryService } from '../open-library.service';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner/ngx';
 
