@@ -15,7 +15,7 @@ export class ChisteRandomPage implements OnInit {
   joke = '';
   img='';
   clicado = false;
-  corazon = 'heart-outline';
+  // corazon = 'heart-outline';
   boton = false;
   resp!:Joke;
   jokes:Joke[]= [];
@@ -23,23 +23,23 @@ export class ChisteRandomPage implements OnInit {
   getRandomJoke() {
     this.service.getRandomJoke().subscribe((resp) => {
       this.joke = resp.value;
-      this.img = resp.icon_url;
+      //this.img = resp.icon_url;
       this.resp = resp;
     });
-    this.clicado = true;
-    this.corazon = 'heart-outline';
+       this.clicado = true;
+    // this.corazon = 'heart-outline';
   }
 
 
-  botonClicado() {
-    if(this.corazon == 'heart-outline'){
-      this.corazon = 'heart';
-      this.service.addFavourite(this.resp);
-    }else{
-      this.corazon = 'heart-outline';
-      this.eliminar(this.resp);
-    }
-  }
+  // botonClicado() {
+  //   if(this.corazon == 'heart-outline'){
+  //     this.corazon = 'heart';
+  //     this.service.addFavourite(this.resp);
+  //   }else{
+  //     this.corazon = 'heart-outline';
+  //     this.eliminar(this.resp);
+  //   }
+  // }
 
   /**
    * Para poder borrarlo necesito
