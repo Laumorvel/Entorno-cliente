@@ -56,14 +56,14 @@ export class DataService {
     return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
   }
 
-  addNote(note: Note) {
-    const notesRef = collection(this.firestore, 'notes');
-    return addDoc(notesRef, note);
+  addFavourite(joke: Joke) {
+    const jokeRef = collection(this.firestore, 'jokes');
+    return addDoc(jokeRef, joke);
   }
 
-  deleteNote(note: Note) {
-    const noteDocRef = doc(this.firestore, `notes/${note.id}`);
-    return deleteDoc(noteDocRef);
+  deleteJoke(joke: Joke) {
+    const jokeRef = doc(this.firestore, `jokes/${joke.id}`);
+    return deleteDoc(jokeRef);
   }
 
   updateNote(note: Note) {
