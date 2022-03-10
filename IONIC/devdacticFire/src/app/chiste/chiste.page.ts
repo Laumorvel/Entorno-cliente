@@ -16,75 +16,72 @@ export class ChistePage implements OnInit {
 
   ngOnInit() {
     this.getFavouriteJokes();
+    this.corazon = this.fav ? "heart" : "heart-outline";
   }
 
-  favouriteJokes:Joke[];
-  img='';
-  clicado = false;
+  favouriteJokes: Joke[];
   corazon = 'heart-outline';
-  boton = false;
-  joke:Joke;
+  joke: Joke;
   fav: boolean = false;
   show: boolean = false;
 
   botonClicado() {
-    if(this.corazon == 'heart-outline'){
+    if (this.corazon == 'heart-outline') {
       this.corazon = 'heart';
-    }else{
+    } else {
       this.corazon = 'heart-outline';
     }
   }
 
-  getFavouriteJokes(){
-    this.service.getFavouriteJokes().subscribe(
-      resp =>{
-        this.favouriteJokes = resp;
-
-      }
-    )
+  getFavouriteJokes() {
+    this.service.getFavouriteJokes().subscribe((resp) => {
+      this.favouriteJokes = resp;
+      console.log(resp);
+      this.getJoke();
+    });
   }
 
-  getJoke(){
-    this.service.getSpecificJoke(this.activedRoute.snapshot.params["id"]).subscribe({
-      next: resp =>{
-        this.checkFav(resp);
-        this.joke = resp;
-        this.show = true;
-      },
-      error: err =>{
-        return null;
-      }
-    })
+  getJoke() {
+    this.service
+      .getSpecificJoke(this.activedRoute.snapshot.params['id'])
+      .subscribe({
+        next: (resp) => {
+          this.checkFav(resp);
+          this.joke = resp;
+          this.show = true;
+        },
+        error: (err) => {
+          return null;
+        },
+      });
   }
 
-  checkFav(joke:Joke){
-    this.favouriteJokes.forEach(j => {
-      if(j.value == joke.value){
+  checkFav(joke: Joke) {
+    this.favouriteJokes.forEach((j) => {
+      if (j.value == joke.value) {
         this.fav = true;
         this.corazon = 'heart';
-      }else{
+      } else {
         this.corazon = 'heart-outline';
       }
-    })
+    });
   }
 
-  favorite(joke: Joke){
-    if(!this.fav){
-      this.service.addFavourite(joke).then(resp =>{
+  favorite(joke: Joke) {
+    if (!this.fav) {
+      this.service.addFavourite(joke).then((resp) => {
         this.corazon = 'heart';
-        this.fav=true;
+        this.fav = true;
       });
-    }else{
-      this.favouriteJokes.forEach(j =>{
-        if(j.value == j.value){
-          this.service.deleteJoke(j).then(resp =>{
+    } else {
+      this.favouriteJokes.forEach((j) => {
+        if (j.value == j.value) {
+          this.service.deleteJoke(j).then((resp) => {
             this.corazon = 'heart-outline';
             this.fav = false;
           });
-
         }
-      })
+      });
     }
   }
-
 }

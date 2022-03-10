@@ -73,7 +73,7 @@ export class DataService {
     return addDoc(jokeRef, joke);
   }
 
-  async deleteJoke(joke: Joke) {
+  deleteJoke(joke: Joke) {
     const jokeRef = doc(this.firestore, `jokes/${joke.id}`);
     return deleteDoc(jokeRef);
   }
