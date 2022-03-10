@@ -7,18 +7,29 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./chiste-random.page.scss'],
 })
 export class ChisteRandomPage implements OnInit {
+  constructor(private service: DataService) {}
 
-  constructor(private service:DataService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  joke = '';
+  clicado = false;
+  corazon = 'heart-outline';
+  boton = false;
 
-
+  getRandomJoke() {
+    this.service.getRandomJoke().subscribe((resp) => {
+      this.joke = resp.value;
+    });
+    this.clicado = true;
+    this.corazon = 'heart-outline';
   }
 
-  getRandomJoke(){
-    this.service.getRandomJoke().subscribe(
 
-    )
+  botonClicado() {
+    if(this.corazon == 'heart-outline'){
+      this.corazon = 'heart';
+    }else{
+      this.corazon = 'heart-outline';
+    }
   }
-
 }

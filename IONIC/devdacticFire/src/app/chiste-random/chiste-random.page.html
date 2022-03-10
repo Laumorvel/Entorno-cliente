@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chiste-random</ion-title>
+    <ion-title>Random joke</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="getRandomJoke()">JOKES BY CATEGORIES</ion-button>
+<ion-content class="centrar">
+  <ion-button class="botonChiste" (click)="getRandomJoke()">JOKES BY CATEGORIES</ion-button>
+
+  <ion-card *ngIf="clicado" >
+    <ion-card-header>
+      <ion-card-subtitle>Your random joke:</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{joke}}
+    </ion-card-content>
+    <ion-button (click)="botonClicado()" class="boton"><ion-icon name={{corazon}}></ion-icon></ion-button>
+    </ion-card>
+
 </ion-content>
