@@ -16,22 +16,14 @@ export class ChistePage implements OnInit {
 
   ngOnInit() {
     this.getFavouriteJokes();
-    this.corazon = this.fav ? "heart" : "heart-outline";
+    this.corazon = this.fav ? 'heart' : 'heart-outline';
   }
 
   favouriteJokes: Joke[];
   corazon = 'heart-outline';
   joke: Joke;
-  fav: boolean = false;
+  fav: boolean;
   show: boolean = false;
-
-  botonClicado() {
-    if (this.corazon == 'heart-outline') {
-      this.corazon = 'heart';
-    } else {
-      this.corazon = 'heart-outline';
-    }
-  }
 
   getFavouriteJokes() {
     this.service.getFavouriteJokes().subscribe((resp) => {
@@ -61,7 +53,8 @@ export class ChistePage implements OnInit {
       if (j.value == joke.value) {
         this.fav = true;
         this.corazon = 'heart';
-      } else {
+      }
+      if(!this.fav){
         this.corazon = 'heart-outline';
       }
     });
@@ -69,17 +62,17 @@ export class ChistePage implements OnInit {
 
   favorite(joke: Joke) {
     if (!this.fav) {
-      this.service.addFavourite(joke).then((resp) => {
+      this.service.addFavourite(joke);
         this.corazon = 'heart';
         this.fav = true;
-      });
+
     } else {
       this.favouriteJokes.forEach((j) => {
-        if (j.value == j.value) {
-          this.service.deleteJoke(j).then((resp) => {
+        if (joke.value == j.value) {
+          this.service.deleteJoke(j);
             this.corazon = 'heart-outline';
             this.fav = false;
-          });
+
         }
       });
     }
