@@ -13,14 +13,17 @@ export class ChisteRandomPage implements OnInit {
   ngOnInit() {}
 
   joke = '';
+  img='';
   clicado = false;
   corazon = 'heart-outline';
   boton = false;
   resp!:Joke;
+  jokes:Joke[]= [];
 
   getRandomJoke() {
     this.service.getRandomJoke().subscribe((resp) => {
       this.joke = resp.value;
+      this.img = resp.icon_url;
       this.resp = resp;
     });
     this.clicado = true;
@@ -34,7 +37,16 @@ export class ChisteRandomPage implements OnInit {
       this.service.addFavourite(this.resp);
     }else{
       this.corazon = 'heart-outline';
-      this.service.deleteJoke(this.resp);
+      this.eliminar(this.resp);
     }
   }
+
+  /**
+   * Para poder borrarlo necesito
+   * @param joke
+   */
+  async eliminar(joke: Joke){
+    await this.service.deleteJoke(joke);
+  }
+
 }

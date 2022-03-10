@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'favourites',
     loadChildren: () => import('./favourites/favourites.module').then( m => m.FavouritesPageModule)
   },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'chiste',
+    loadChildren: () => import('./chiste/chiste.module').then( m => m.ChistePageModule)
+  },
 ];
 
 @NgModule({

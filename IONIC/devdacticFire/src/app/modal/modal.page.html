@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="joke">
+    <ion-item>
+      <ion-label position="stacked">Joke</ion-label>
+      <ion-input [(ngModel)]="joke.value" ></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button expand="block" color="success" (click)="updateJoke()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    UPDATE
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteJoke()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    DELETE
+  </ion-button>
+
+</ion-content>

@@ -3,6 +3,7 @@ import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc,
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Joke } from '../Interfaces/interfaces';
+import { Jokes } from '../Interfaces/interface';
 
 export interface Note {
   id?: string;
@@ -41,19 +42,18 @@ export class DataService {
         .set('query', search)
         .set('limit', 10)
 
-      return this.httpClient.get<string[]>(`${this.urlBase}search`);
+      return this.httpClient.get<Jokes>(`${this.urlBase}search`,{params: params});
      }
 
 
-  getNote(): Observable<Note[]> {
-
-    const notesRef = collection(this.firestore, 'notes');
-    return collectionData(notesRef, { idField: 'id'}) as Observable<Note[]>;
+  getJokes(): Observable<Joke[]> {
+    const jokeRef = collection(this.firestore, 'notes');
+    return collectionData(jokeRef, { idField: 'id'}) as Observable<Joke[]>;
   }
 
-  getNoteById(id): Observable<Note> {
-    const noteDocRef = doc(this.firestore, `notes/${id}`);
-    return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
+  getJokeById(id): Observable<Joke> {
+    const jokeDocRef = doc(this.firestore, `jokes/${id}`);
+    return docData(jokeDocRef, { idField: 'id' }) as Observable<Joke>;
   }
 
   addFavourite(joke: Joke) {
@@ -61,13 +61,13 @@ export class DataService {
     return addDoc(jokeRef, joke);
   }
 
-  deleteJoke(joke: Joke) {
-    const jokeRef = doc(this.firestore, `jokes/${joke.id}`);
-    return deleteDoc(jokeRef);
+  async deleteJoke(joke: Joke) {
+     const jokeRef = doc(this.firestore, `jokes/${joke.id}`);
+     return deleteDoc(jokeRef);
   }
 
-  updateNote(note: Note) {
-    const noteDocRef = doc(this.firestore, `notes/${note.id}`);
-    return updateDoc(noteDocRef, { title: note.title, text: note.text });
+  updateJoke(joke: Joke) {
+    const jokeDocRef = doc(this.firestore, `jokes/${joke.id}`);
+    return updateDoc(jokeDocRef, { value: joke.value});
   }
 }
