@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
-
-    <ion-title><a [routerLink]="['/home']"
-      ><ion-icon style="color: black" name="caret-back-outline">
-      </ion-icon
-    ></a>JOKES</ion-title>
+    <ion-title
+      ><a [routerLink]="['/home']"
+        ><ion-icon style="color: black" name="caret-back-outline">
+        </ion-icon></a
+      >JOKES</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
@@ -29,16 +30,17 @@
           <img src="{{joke.icon_url}}" />
         </ion-thumbnail>
 
-        <ion-label style="margin-left: 2%">
+        <ion-label
+          button
+          [routerLink]="['/chiste', joke.id]"
+          style="margin-left: 2%"
+        >
           <ion-text color="dark">
             <h2><b>{{joke.value}}</b></h2>
           </ion-text>
         </ion-label>
-
-        <a [routerLink]="['/chiste', joke.id]"
-          ><ion-icon style="color: black" name="chevron-forward-outline">
-          </ion-icon
-        ></a>
+        <ion-icon style="color: black" name="chevron-forward-outline">
+        </ion-icon>
       </ion-item>
     </ion-list>
   </ion-card>

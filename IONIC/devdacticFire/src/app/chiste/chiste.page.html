@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chiste</ion-title>
+    <ion-title
+      ><a [routerLink]="['/chistes']"
+        ><ion-icon style="color: black" name="caret-back-outline">
+        </ion-icon></a
+      >Joke</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div *ngIf="show">
+    <div class="text-center">
+      <img src="{{joke.icon_url}}" />
+    </div>
 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ joke.value }}</ion-card-title>
+
+        <ion-button color="light" (click)="favorite(joke)">
+          <ion-icon [name]="corazon"></ion-icon>
+        </ion-button>
+      </ion-card-header>
+    </ion-card>
+  </div>
 </ion-content>

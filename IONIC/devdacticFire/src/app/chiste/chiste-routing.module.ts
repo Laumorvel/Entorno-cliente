@@ -5,7 +5,7 @@ import { ChistePage } from './chiste.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: ChistePage
   }
 ];
